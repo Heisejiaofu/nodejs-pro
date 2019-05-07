@@ -1,0 +1,75 @@
+<% include header%>
+<div class="page-wrapper">
+    <div class="container-fluid">
+            
+        <div class="textAdd">
+            <div class="title">修改文章信息</div>
+                 <form action="/admin/textImgEidt" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                      <input type="hidden" name="_id" value="<%=datas._id%>" >
+                      <div class="input-group col-md-6">
+                        <span class="input-group-addon">文章封面</span>
+                        <input type="file" class="form-control" name="imgurl">
+                      </div>
+                      <div class="input-group col-md-6 dablebtn ">
+                            <input type="submit" value="确认修改封面" class="btn-success btn-sm ">
+                      </div> 
+                    </div>
+                </form>
+                <form action="/admin/textContentEidt" method="post">
+                    <input type="hidden" name="_id" value="<%=datas._id%>" >
+                    <div class="row">
+                      <div class="input-group col-md-6">
+                        <span class="input-group-addon">文章题目</span>
+                        <input type="text" class="form-control" name="title" value="<%= datas.title %>">
+                      </div>
+                
+                      <div class="input-group col-md-6">
+                        <span class="input-group-addon">关键字词</span>
+                        <input type="text" class="form-control" name="keywords" value="<%= datas.keywords %>">
+                      </div>
+                    
+                      
+                      <div class="input-group col-md-6">
+                            <span class="input-group-addon">作者姓名</span>
+                            <input type="text" class="form-control" name="author" value="<%= datas.author %>">
+                      </div>
+                      <div class="input-group col-md-6">
+                            <span class="input-group-addon">文章分类</span>
+                            <select class="form-control" name="itemId">
+                              <% items.forEach(function(item){ %>
+                                <option value="<%=item._id%>"><%=item.name%></option>
+                              <% }) %>
+                            </select>
+                          </div> 
+                      <div class="input-group col-md-12">
+                            <span class="input-group-addon">文章描述</span>
+                            <input type="text" class="form-control" name="description" value="<%= datas.description %>">
+                      </div>
+                        
+                      <div class="col-md-12 content">
+                            <!-- 加载编辑器的容器 -->
+                          <script id="content" name="content" type="text/plain" >
+                          </script> 				
+                      </div>
+                      <div class="input-group col-md-6 dablebtn">
+                            <input type="reset" value="重置内容" class="btn-danger btn-sm">
+                          </div>
+                      <div class="input-group col-md-6 dablebtn">
+                        <input type="submit" value="提交修改" class="btn-success btn-sm">
+                      </div>   
+                    </div>            
+                 </form> 
+                
+            </div>
+    </div>
+</div>
+<!-- 引入 富文本 插件 -->
+<script src="/ueditor/ueditor.config.js"></script>
+<script src="/ueditor/ueditor.all.min.js"></script>
+<script>
+    // 实例化 	富文本
+    var ue = UE.getEditor('content');
+
+</script>
+<% include footer%>

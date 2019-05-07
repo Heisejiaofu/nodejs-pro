@@ -1,0 +1,29 @@
+/* 后台页面Index */
+.textcontent{text-align: center}
+/* 添加栏目页面 */
+.itemAdd .input-group{margin:20px auto}
+.itemAdd form{width:60%;margin:30px auto}
+.itemAdd .title{font-size: 22px;text-align: center}
+.itemAdd .btn{float: right;}
+/* 栏目列表 */
+.itemList .list{text-align: center}
+.itemList .listPage{margin-top: 40px}
+/* 文章上传页面 */
+.textAdd .input-group{margin:20px auto}
+.textAdd form{width:100%;margin:30px auto}
+.textAdd .title{font-size: 22px;text-align: center}
+.textAdd .dablebtn{margin: 20px auto}
+/* 文章列表页面 */
+.textList .list{text-align: center}
+.textList .listPage{margin-top: 40px}
+.textList table tr img{width:60px;}
+/* 编辑栏目页面 */
+.textEdit .input-group{margin:20px auto}
+.textEdit form{width:100%;margin:30px auto}
+.textEdit .title{font-size: 22px;text-align: center}
+.textEdit .dablebtn{margin: 20px auto}
+/* 添加管理员页面 */
+.adminAdd .input-group{margin:20px auto}
+.adminAdd form{width:60%;margin:30px auto}
+.adminAdd .title{font-size: 22px;text-align: center}
+.adminAdd .btn{float: right;}

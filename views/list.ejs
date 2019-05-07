@@ -1,0 +1,30 @@
+<% include header %>
+<article>
+    <div class="blogs">
+            <% dataAll.forEach(function(dataall){ %>
+            <li> <span class="blogpic"><a href="/"><img src="/<%=dataall.imgurl%>"></a></span>
+              <h3 class="blogtitle"><a href="/"><%=dataall.title%></a></h3>
+              <div class="bloginfo">
+                <p><%-dataall.description%></p>
+              </div>
+              <div class="autor">
+                <span class="lm">
+                  <a href="/" title="CSS3|Html5" target="_blank" class="classname">超级爽文网</a>
+                </span>
+                <span class="dtime"><%=dataall.ctime.toLocaleString()%></span>
+                <span class="viewnum">浏览（<a href="/">0</a>）</span>
+                <span class="readmore">
+                  <a href="/reding/<%=dataall._id%>">阅读原文</a>
+                </span>
+              </div>
+            </li>
+            <% }) %>
+            <div class="pagelist">
+                <a href="/list/<%=Id%>?page=<%= page-1 %>">&nbsp;<b>上一页</b></a>&nbsp;&nbsp;&nbsp;
+                <% for( var i=1;i<= pageMax;i++){ %>
+                   <a href="/list/<%=Id%>?page=<%=i%>" ><%=i%></a>
+                <% } %>
+                <a href="/list/<%=Id%>?page=<%= -(-page-1) %>">下一页</a>&nbsp;
+            </div>
+          </div>
+<% include footer %>

@@ -1,0 +1,51 @@
+<% include header%>
+<div class="page-wrapper">
+    <div class="container-fluid itemList">
+        <h2 class="list">栏目列表</h2>
+        <table class="table table-bordered list">
+            <thead class="thead-dark list">
+              <tr class="table-info list">
+                <th scope="col" class="list">排序</th>
+                <th scope="col" class="list">栏目名称</th>
+                <th scope="col" class="list">栏目信息</th>
+                <th scope="col" class="list">创建时间</th>
+                <th scope="col" class="list">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% items.forEach(function(item){ %>
+                <tr class="list table-success">
+                        <th scope="row" class="list"><%= item.order %></th>
+                        <td><%= item.name %></td>
+                        <td><%= item.info %></td>                      
+                        <td> <%=item.ctime.toLocaleString()%></td>
+                        <td>
+                            <a href="/admin/itemEdit/<%=item._id%>">编辑</a>|<a href="/admin/itemRemove/<%=item._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+                        </td>
+                      </tr>
+            <% }) %>
+              
+            </tbody>
+          </table>
+            <nav aria-label="Page navigation example listPage">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="/admin/itemList?page=<%= page-1 %>" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <% for( var i=1;i<= maxPage;i++){ %>
+                    <li class="page-item"><a class="page-link" href="/admin/itemList?page=<%=i%>" ><%=i%></a></li>
+                  <% } %>
+                  <li class="page-item">
+                    <a class="page-link" href="/admin/itemList?page=<%= -(-page-1) %>" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+            </nav>
+    </div>
+</div>
+<% include footer%>

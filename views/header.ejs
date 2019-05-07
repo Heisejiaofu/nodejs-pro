@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>超级爽文网</title>
+<meta name="keywords" content="小说,武侠,科幻,爱情" />
+<meta name="description" content="超级爽文网，一个让你不断成长进步的学习平台" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/client/css/base.css" rel="stylesheet">
+<link href="/client/css/index.css" rel="stylesheet">
+<link href="/client/css/m.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+<script>
+window.onload = function ()
+{
+	var oH2 = document.getElementsByTagName("h2")[0];
+	var oUl = document.getElementsByTagName("ul")[0];
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="tophead">
+    <div class="logo"><a href="/">超级爽文网</a></div>
+    <nav class="topnav" id="topnav">
+      <ul>
+        <% items.forEach(function(item){ %>
+            <li><a href="/list/<%=item._id%>"><%=item.name%></a></li>
+        <% }) %>
+      </ul>
+    </nav>
+  </div>
+</header>

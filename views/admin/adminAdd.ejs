@@ -1,0 +1,41 @@
+<% include header%>
+
+<div class="page-wrapper">
+    <div class="container-fluid">
+           
+        <div class="adminAdd">
+            <div class="title">添加管理员</div>
+                 <form action="/admin/adminInsert" method="post">
+                      <div class="input-group">
+                        <span class="input-group-addon">登录账户</span>
+                        <input type="text" class="form-control" name="name">
+                      </div>
+                
+                      <div class="input-group">
+                        <span class="input-group-addon">账户密码</span>
+                        <input type="password" class="form-control" name="password">
+                      </div>
+                
+                      <div class="input-group">
+                        <span class="input-group-addon">确认密码</span>
+                        <input type="password" class="form-control" name="reqpassword">
+                      </div>  
+                      <div class="input-group">
+                            <span class="input-group-addon">输入验证码</span>
+                            <input type="text" class="form-control mycode" name="code">
+                            <span class="input-group-addon">
+                            <a href="/admin/adminAdd">
+                                <img  src="/admin/code" alt="" class="mycode" title="点击刷新验证码">
+                            </a>
+                            </span>
+                      </div>     
+                
+                      <div class="input-group">
+                        <input type="submit" value="提交" class="btn-success btn-block">
+                      </div>               
+                 </form> 
+                
+            </div>
+    </div>
+</div>
+<% include footer%>

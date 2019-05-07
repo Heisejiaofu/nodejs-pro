@@ -1,0 +1,32 @@
+<% include header%>
+<div class="page-wrapper">
+    <div class="container-fluid">
+            
+        <div class="itemAdd">
+            <div class="title">修改栏目名称</div>
+                 <form action="/admin/itemFind" method="post">
+                    <input type="hidden" name="_id" value="<%=datas._id %>">
+                      <div class="input-group">
+                        <span class="input-group-addon">修改栏目名称</span>
+                        <input type="text" class="form-control" name="name" value="<%=datas.name %>">
+                      </div>
+                
+                      <div class="input-group">
+                        <span class="input-group-addon">修改栏目介绍</span>
+                        <input type="text" class="form-control" name="info" value="<%=datas.info %>">
+                      </div>
+                
+                      <div class="input-group">
+                        <span class="input-group-addon">修改栏目排序</span>
+                        <input type="text" class="form-control" name="order" value="<%=datas.order %>">
+                      </div>      
+                
+                      <div class="input-group">
+                        <input type="submit" value="修改" class="btn-success btn-block">
+                      </div>               
+                 </form> 
+                
+            </div>
+    </div>
+</div>
+<% include footer%>

@@ -1,0 +1,61 @@
+    <div class="sidebar">
+        <div class="about">
+          <div class="avatar"> <img src="/client/images/avatar.jpg" alt=""> </div>
+          <p class="abname">heisejiaofu | 是我</p>
+          <p class="abposition">Web前端开发工程师</p>
+          <div class="abtext"> 一个很酷，很nice，没有广告的小说网站 </div>
+        </div>
+        <div class="search">
+          <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+            <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+            <input name="show" value="title" type="hidden">
+            <input name="tempid" value="1" type="hidden">
+            <input name="tbname" value="news" type="hidden">
+            <input name="Submit" class="input_submit" value="搜索" type="submit">
+          </form>
+        </div>
+        <div class="cloud">
+          <h2 class="hometitle">标签云</h2>
+          <ul>
+            <% items.forEach(function(item){ %>
+            <a href="/"><%=item.name%></a> 
+            <% }) %>
+          </ul>
+        </div>
+        <div class="paihang">
+          <h2 class="hometitle">点击排行</h2>
+          <ul>
+            <% datas.forEach(function(dataall){ %>
+            <li><b><a href="/download/div/2015-04-10/746.html" target="_blank"><%=dataall.title%></a></b>
+              <p><i><img src="/<%=dataall.imgurl%>"></i><%-dataall.description%></p>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="paihang">
+          <h2 class="hometitle">站长推荐</h2>
+          <ul>
+            <% datas.forEach(function(dataall){ %>
+            <li><b><a href="/download/div/2015-04-10/746.html" target="_blank"><%=dataall.title%></a></b>
+              <p><i><img src="/<%=dataall.imgurl%>"></i><%-dataall.description%></p>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="links">
+          <h2 class="hometitle">友情链接</h2>
+          <ul>
+            <li><a href="https://www.qidian.com" title="起点中文网"  target="_blank">起点中文网</a></li>
+            <li><a href="http://www.zongheng.com" title="纵横中文网"  target="_blank">纵横中文网</a></li>
+            <li><a href="http://www.jjwxc.net/" title="晋江文学网"  target="_blank">晋江文学网</a></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <div class="blank"></div>
+    <footer>
+      <p> <a href="/">超级爽文网</a> <a href="/">蜀ICP备11002373号-1</a></p>
+    </footer>
+    <script src="/client/js/nav.js"></script>
+    </body>
+    </html>

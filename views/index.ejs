@@ -1,0 +1,33 @@
+<% include header %>
+<div class="picshow">
+  <ul>
+    <% datas.forEach(function(data){ %>
+        <li><a href="/reding/<%=data._id%>"><i><img src="/<%=data.imgurl%>"></i>
+            <div class="font">
+              <h3><%=data.title%></h3>
+            </div>
+            </a>
+        </li>
+    <% }) %>
+   
+  </ul>
+</div>
+<article>
+  <div class="blogs">
+    <% dataAll.forEach(function(dataall){ %>
+    <li> <span class="blogpic"><a href="/"><img src="/<%=dataall.imgurl%>"></a></span>
+      <h3 class="blogtitle"><a href="/"><%=dataall.title%></a></h3>
+      <div class="bloginfo">
+        <p><%-dataall.description%></p>
+      </div>
+      <div class="autor">
+        <span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">超级爽文网</a></span>
+        <span class="dtime"><%=dataall.ctime.toLocaleString()%></span>
+        <span class="viewnum">浏览（<a href="/">0</a>）</span>
+        <span class="readmore"><a href="/reding/<%=dataall._id%>">阅读原文</a></span>
+      </div>
+    </li>
+    <% }) %>
+  </div>
+  
+  <% include footer %>

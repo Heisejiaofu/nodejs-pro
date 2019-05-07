@@ -1,0 +1,20 @@
+<% include header %>
+<article>
+        <div class="infos">
+                <div class="newsview">
+                  <h3 class="news_title"><%=contents.title%></h3>
+                  <div class="news_author">
+                    <span class="au01"><a href="mailto:dancesmiling@qq.com"><%=contents.author%></a>
+                    </span><span class="au02"><%=contents.ctime.toLocaleString()%></span>
+                    <span class="au03">共<b><script src="/e/public/ViewClick/?classid=5&amp;id=816&amp;addclick=1"></script>1833</b>人围观</span>
+                  </div>
+                  <div class="news_about"><strong>简介</strong><%=contents.description%></div>
+                  <div class="news_infos">
+                    <%-contents.content%>
+                  </div>
+                </div>
+                
+               
+                
+              </div>
+<% include footer %>
